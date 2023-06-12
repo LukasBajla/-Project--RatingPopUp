@@ -1,0 +1,146 @@
+:root {
+  --orange: hsl(25, 97%, 53%);
+  --p: hsl(217, 12%, 63%);
+  --ratingcircle: 4em;
+}
+html {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font-family: "Overpass", sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(220, 10%, 6%);
+  color: #ddd;
+  /* color: hsl(217, 12%, 63%); */
+  font-size: 15px;
+}
+i {
+  color: var(--orange);
+}
+p {
+  color: var(--p);
+}
+
+.circle {
+  background-color: hsl(213, 19%, 18%);
+  border-radius: 50%;
+  width: var(--ratingcircle);
+  height: var(--ratingcircle);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8em;
+  transition: background-color .3s ease-in-out;
+}
+.circle-active{
+    background-color: var(--orange);
+}
+.circle-hover{
+    background-color: white;
+    color: #222;
+}
+
+.container {
+  background: #252d37;
+  background: linear-gradient(180deg, #252d37 0%, #121417 100%);
+  width: 85vw;
+  max-width: 25em;
+  padding: 2em;
+  border-radius: 1em;
+  box-shadow: 10px 10px 19px -9px rgba(0, 0, 0, 0.75);
+}
+
+/* ----- RATING */
+#rating {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+}
+
+.container p {
+  font-size: 0.9em;
+  line-height: 1.5em;
+}
+
+#rating-cont {
+  display: flex;
+  justify-content: space-between;
+  margin: 1em 0;
+}
+#rating-cont .circle:hover {
+    cursor: pointer;
+}
+
+#rating button {
+  background-color: var(--orange);
+  border: none;
+  border-radius: 2em;
+  color: white;
+  padding: 1.1em;
+  /* font-size: 1em; */
+  letter-spacing: 0.2em;
+  font-weight: 700;
+  transition: color,background-color .2s ease-in-out;
+}
+#rating button:hover {
+    background-color: white;
+    color: var(--orange);
+    cursor: pointer;
+}
+
+/* ---------- THANK YOU*/
+#thankyou {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2em;
+}
+#thankyou p {
+  text-align: center;
+}
+.rating-output-text {
+  color: var(--orange);
+  background-color: #252d37;
+  padding: .2em 1.5em;
+  border-radius: 2.3em;
+  margin: 1em 0;
+}
+#thankyou button {
+  border: none;
+  border-radius: 50%;
+  background-color: #252d37;
+  width: 2em;
+  height: 2em;
+  font-size: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: .5;
+  transition: opacity .2s ease-in-out;
+}
+#thankyou button:hover {
+  opacity: .2;
+  cursor: pointer;
+}
+#thankyou button i {
+  color: white;
+}
+
+
+.err {
+    color: red;
+    align-self: center;
+}
+.hidden, #rating.hidden, #thankyou.hidden {
+  display: none;
+}
